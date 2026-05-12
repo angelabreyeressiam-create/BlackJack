@@ -1,15 +1,15 @@
+import java.util.Scanner;
+
 public class Main {
+
+    int numCards = 0;
+    Player playerOne = new Player("player 1");
+    Player dealer = new Player("Dealer");
 
     public Card [] deck;
 
     public static void main(String[] args) {
         Main blackjack = new Main();
-        Player playerOne = new Player("player 1");
-        Player dealer = new Player("Dealer");
-        Card playerOne.addCard(deck[0]);
-        Card dealer.addCard(deck[1]);
-        playerOne.printCard();
-
     }
 
     public Main(){
@@ -26,8 +26,22 @@ public class Main {
             }
 
         }
-        printDeck();
         shuffle();
+        printDeck();
+
+        playerOne.addCard(deck[numCards]);
+        numCards ++;
+        playerOne.addCard(deck[numCards]);
+        numCards ++;
+        dealer.addCard(deck[numCards]);
+        numCards ++;
+        playerOne.printPlayer();
+        dealer.printDealer();
+
+
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+
     }
 
     public void printDeck(){
@@ -45,6 +59,8 @@ public class Main {
 
         }
     }
+
+
 }
 
 
