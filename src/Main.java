@@ -6,7 +6,9 @@ public class Main {
         Main blackjack = new Main();
         Player playerOne = new Player("player 1");
         Player dealer = new Player("Dealer");
-        playerOne.addCard(card.deck);
+        Card playerOne.addCard(deck[0]);
+        Card dealer.addCard(deck[1]);
+        playerOne.printCard();
 
     }
 
