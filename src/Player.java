@@ -5,7 +5,7 @@ public class Player {
     public String name;
     public Card [] hand;
     public int numCards;
-    public int sum = 0;
+    public int sumCards;
 
 
     public Player(String pname){
@@ -20,13 +20,14 @@ public class Player {
         for (int i = 0; i < numCards; i++) {
             hand[i].printCard();
         }
-        System.out.println("Player One has"+  + numCards + "cards");
+        System.out.println(" Player One has "+  + numCards + " cards that equal to " + sumCards);
     }
+
     public void printDealer(){
         for (int i = 0; i < numCards; i++) {
             hand[i].printCard();
         }
-        System.out.println("Dealer has"+  + numCards + "cards");
+        System.out.println(" Dealer has "+  + numCards + " cards that equal to " + sumCards);
     }
 
     public void addCard(Card newCard){
@@ -34,12 +35,14 @@ public class Player {
         numCards++;
     }
 
-//    public int sumCards(){
-//        int sum = 0;
-//        for (int i = 0; i < numCards; i++) {
-//
-//        }
-//    }
+    public int sumCards(){
+        int sum = 0;
+        for (int i = 0; i < numCards; i++) {
+            sum = sum + hand[i].value;
+        }
+        sumCards = sum;
+        return sumCards;
+    }
 
 
 }

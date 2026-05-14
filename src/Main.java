@@ -35,12 +35,34 @@ public class Main {
         numCards ++;
         dealer.addCard(deck[numCards]);
         numCards ++;
+        playerOne.sumCards();
+        dealer.sumCards();
         playerOne.printPlayer();
+        for (int i = 0; i < numCards; i++) {
+            playerOne.hand[i].printCard();
+        }
         dealer.printDealer();
-
-
+        for (int i = 0; i <numCards; i++) {
+            dealer.hand[i].printCard();
+        }
+        System.out.println("Press h to hit and s to stand");
         Scanner sc = new Scanner(System.in);
-        String input = sc.nextLine();
+
+        while (true) {
+            String input = sc.nextLine();
+            if (input.equals("h")){
+                playerOne.addCard(deck[numCards]);
+                numCards ++;
+                playerOne.sumCards();
+                playerOne.printPlayer();
+                if(playerOne.sumCards > 21){
+                    System.out.println("Player One loses!");
+                }
+
+            }
+
+
+        }
 
     }
 
